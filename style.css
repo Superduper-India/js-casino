@@ -1,0 +1,75 @@
+@import "reset.css";
+
+:root {
+    /*색상*/
+    --white-color: #fff;
+    /*크기*/
+    --big-font: 48px;
+    --mid-font: 24px;
+    /*마진&패딩*/
+    --padding-topBttm: 32px 0;
+    --margin-bttm: 24px;
+}
+
+body {
+    background-color: #181818; /*배경색*/
+    color:var(--white-color); /*전체글자색*/
+    display: flex;
+    flex-direction:column; /*내용물 수직정렬*/
+    justify-content: center; /*수직기준 가운데정렬*/
+    align-items: center; /*수평기준 가운데정렬*/
+    height: 100vh; /*높이설정>수직기준 가운데정렬가능하게함*/
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.title { /*0.게임제목*/
+    padding: var(--padding-topBttm); /*상하 패딩값*/
+    margin-bottom: var(--margin-bttm);
+    font-size:var(--big-font); /*큰 글자크기*/
+}
+
+form span, .result>span:first-child { /*1.숫자지정, 2.숫자고르기, 3.결과창*/
+    font-size: var(--mid-font); /*중간 글자크기*/
+}
+form { /*1.숫자지정, 2.숫자고르기*/
+    margin-bottom: var(--margin-bttm); /*아랫쪽마진*/
+}
+form input { /*1.숫자지정, 2.숫자고르기 입력창, 게임시작버튼*/
+    border: none; /*테두리제거*/
+    color:var(--white-color); /*글자색*/
+    background-color: transparent; /*배경색 투명*/
+}
+form input[type="number"] { /*1.숫자지정, 2.숫자고르기 입력창*/
+    width: 120px;
+    height: 30px;
+    border-bottom: 1px solid var(--white-color); /*입력박스 밑줄*/
+    font-size: var(--mid-font); /*중간 글자크기*/
+}
+input[type="submit"] { /*2.숫자고르기 게임시작버튼*/
+    width:50px;
+    height: 50px;
+    border-radius: 25px; /*버튼 동그랗게*/
+    color:var(--white-color); /*글자색*/
+    background-color:darkorchid; /*버튼색*/
+    font-weight: bold; /*글자굵게*/
+    cursor: pointer; /*커서올렸을때 손모양*/
+    box-shadow: 1px 3px 0 var(--white-color) /*버튼클릭효과 before*/
+}
+input[type="submit"]:active { /*2.숫자고르기 게임시작버튼:클릭했을때*/
+    box-shadow: 1px 1px 0 var(--white-color) /*버튼클릭효과 after*/
+}
+
+.result { /*3.결과창*/
+    display: flex;
+    flex-direction: column; /*결과, 패배or승리 수직정렬*/
+}
+.resultStatus { /*3.결과창-결과*/
+    padding: var(--padding-topBttm); /*상하 패딩값*/
+}
+.resultWin, .resultLost { /*3.결과창-패배or승리*/
+    font-weight: bold; /*글자굵게*/
+    font-size: var(--big-font); /*큰 글자크기*/
+}
+
+.hidden { /*결과, 패배or승리 가려주기*/
+    display: none;
+}

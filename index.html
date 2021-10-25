@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Casino</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <!--0.게임제목-->
+        <h1 class="title">Random Number Game</h1>
+
+        <!--1.숫자지정-->
+        <form class="selectNumber">
+            <!--지정숫자 입력-->
+            <span>Generate a number between 0 and</span>
+            <!--숫자입력창: 최소 입력값0 이상-->
+            <input type="number" min="0">
+        </form>
+
+        <!--2.숫자고르기-->
+        <form class="guessNumber">
+            <span>Guess the number: </span>
+            <!--숫자입력창: 최소 입력값0 이상, 최대 입력값?? 이하-->
+            <input class="input" type="number" min="0" max="">
+            <!--게임시작버튼-->
+            <input class="btn" type="submit" value="PLAY">
+        </form>
+
+        <!--3.결과창-->
+        <div class="result">
+            <!--결과-->
+            <span class="hidden resultStatus"></span>
+            <!--패배-->
+            <span class="hidden resultLost">You lost!</span>
+            <!--승리-->
+            <span class="hidden resultWin">You win!</span>
+        </div>
+    </div>
+    <!--자바스크립트 불러오기-->
+    <script src="js.js"></script>
+</body>
+
+</html>
